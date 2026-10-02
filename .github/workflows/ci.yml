@@ -12,6 +12,7 @@ permissions:
 jobs:
   test:
     name: test (${{ matrix.os }})
+    timeout-minutes: 25
     # Windows is not redundant coverage here: graft stores repo-relative paths and
     # parses them with `/` by hand, so a platform-separator leak matches nothing
     # rather than erroring. That class of bug is invisible to a posix-only matrix
@@ -60,6 +61,7 @@ jobs:
   node24-wasm:
     name: Node 24 WASM regression
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout code
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4

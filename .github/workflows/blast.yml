@@ -19,6 +19,7 @@ permissions:
 
 jobs:
   blast:
+    if: github.repository == 'trailhq/Graft'
     runs-on: ubuntu-latest
     # Read-only now that it does not comment: least privilege, and it makes the
     # split with blast-pages.yml legible from the permissions alone.

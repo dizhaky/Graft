@@ -10,6 +10,7 @@ permissions: read-all
 
 jobs:
   analysis:
+    if: github.repository == 'trailhq/Graft'
     runs-on: ubuntu-latest
     permissions:
       security-events: write
