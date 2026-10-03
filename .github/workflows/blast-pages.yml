@@ -44,7 +44,7 @@ concurrency:
 
 jobs:
   publish:
-    if: github.event.action != 'closed'
+    if: github.repository == 'trailhq/Graft' && github.event.action != 'closed'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -251,7 +251,7 @@ jobs:
   # A merged or closed PR's page is dead weight — and on a busy repo, thousands of
   # 1 MB files. Removed with the PR, not on a timer.
   cleanup:
-    if: github.event.action == 'closed'
+    if: github.repository == 'trailhq/Graft' && github.event.action == 'closed'
     runs-on: ubuntu-latest
     permissions:
       contents: write

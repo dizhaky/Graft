@@ -43,7 +43,7 @@ const gitEnv = {
   GIT_CONFIG_KEY_1: "tag.gpgsign", GIT_CONFIG_VALUE_1: "false",
 };
 
-const result = spawnSync(process.execPath, ["--import", "tsx", "--test", ...files], {
+const result = spawnSync(process.execPath, ["--import", "tsx", "--test", "--test-concurrency=2", ...files], {
   cwd: repoRoot,
   stdio: "inherit",
   env: { ...process.env, ...gitEnv },

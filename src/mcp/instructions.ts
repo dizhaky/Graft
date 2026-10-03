@@ -40,9 +40,7 @@ export function toolSearchQuery(prefix = 'mcp__graft__'): string {
 
 export function mcpInstructions(): string {
   return [
-    'This repo is indexed by graft: a prebuilt graph of every symbol, its file:line',
-    'span, and who calls what. Prefer these tools over grep/read — one call usually',
-    'replaces several file reads.',
+    'Graft indexes symbols, file:line spans, and calls. Query it before grep/read.',
     '',
     `**If these tools are deferred (names shown, schemas withheld), load them all in ONE lookup:** ToolSearch "${toolSearchQuery()}" — one round trip for the whole session. Never load them one at a time.`,
     '',
