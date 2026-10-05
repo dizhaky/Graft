@@ -40,7 +40,7 @@ export function toolSearchQuery(prefix = 'mcp__graft__'): string {
 
 export function mcpInstructions(): string {
   return [
-    'Graft indexes symbols, file:line spans, and calls. Query it before grep/read.',
+    'Graft indexes symbols, file:line spans, and calls. When its tools are listed, query it before grep/read; when none are listed (no index here), use grep/read.',
     '',
     `**If these tools are deferred (names shown, schemas withheld), load them all in ONE lookup:** ToolSearch "${toolSearchQuery()}" — one round trip for the whole session. Never load them one at a time.`,
     '',

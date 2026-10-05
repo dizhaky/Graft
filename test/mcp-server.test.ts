@@ -145,6 +145,9 @@ test('initialize carries instructions — the layer that survives tool deferral'
   // Observed sibling servers sit at 660–984 chars; nothing proves a longer one
   // survives un-truncated, so hold the line here rather than discover it later.
   assert.ok(instructions.length < 1000, `instructions must stay under 1000 chars, got ${instructions.length}`);
+  // The server advertises no tools in a project with no index, so the steer toward
+  // graft must be conditional on the tools being listed or it sends agents nowhere.
+  assert.match(instructions, /When its tools are listed.*when none are listed/, 'steer is conditional on tools being available');
   assert.match(serverInfo.version, /^\d+\.\d+\.\d+$/, 'real version, not the old hardcoded 0');
 });
 
